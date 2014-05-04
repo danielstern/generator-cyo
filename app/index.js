@@ -41,40 +41,27 @@ AppGenerator.prototype.askFor = function askFor() {
 
   // welcome message
   if (!this.options['skip-welcome-message']) {
+    this.yeoman += "... CYO Edition";
     console.log(this.yeoman);
-    console.log(chalk.magenta(
-      'Out of the box I include HTML5 Boilerplate, jQuery, and a ' +
-      'Gruntfile.js to build your app.'
+    console.log(chalk.white(
+      "Welcome to CYO! Answer me these questions three and I will make your game."
     ));
   }
 
   var prompts = [{
-    type: 'checkbox',
-    name: 'features',
-    message: 'What more would you like?',
-    choices: [{
-      name: 'Bootstrap',
-      value: 'includeBootstrap',
-      checked: true
-    },{
-      name: 'Sass',
-      value: 'includeSass',
-      checked: false
-    },{
-      name: 'Modernizr',
-      value: 'includeModernizr',
-      checked: false
-    }]
-  }, {
-    when: function (answers) {
-      return answers.features.indexOf('includeSass') !== -1;
-    },
+    name: 'storyName',
+    message: 'What shall your tale be called?',
+    default: "My Tale"
+  },{
     type: 'confirm',
-    name: 'libsass',
-    value: 'includeLibSass',
-    message: 'Would you like to use libsass? Read up more at \n' +
-      chalk.green('https://github.com/andrew/node-sass#node-sass'),
-    default: false
+    name: 'includePictures',
+    message: 'Shall your tale include pictures?',
+    default: true,
+  },
+  {
+    name: 'color',
+    message: 'What is your favorite color?',
+    default: "Blue... I mean green!",
   }];
 
   this.prompt(prompts, function (answers) {
@@ -84,9 +71,13 @@ AppGenerator.prototype.askFor = function askFor() {
       return features.indexOf(feat) !== -1;
     }
 
-    this.includeSass = hasFeature('includeSass');
-    this.includeBootstrap = hasFeature('includeBootstrap');
-    this.includeModernizr = hasFeature('includeModernizr');
+    this.includeSass = false;
+    this.includeBootstrap = true;
+    this.includeModernizr = true;
+
+    this.color = answers.color;
+    this.storyName = answers.storyName;
+    this.includePictures = answers.includePictures;
 
     this.includeLibSass = answers.libsass;
     this.includeRubySass = !answers.libsass;
@@ -125,6 +116,15 @@ AppGenerator.prototype.h5bp = function h5bp() {
   this.copy('404.html', 'app/404.html');
   this.copy('robots.txt', 'app/robots.txt');
   this.copy('htaccess', 'app/.htaccess');
+
+  // I'd like to add a rider to that. - CYO
+  this.directory('global','app/global');
+  this.directory('js','app/js');
+  this.directory('story','app/story');
+  this.directory('storytelling','app/storytelling');
+
+  this.copy('main.js','app/main.js');
+  this.copy('app.js','app/app.js');
 };
 
 AppGenerator.prototype.mainStylesheet = function mainStylesheet() {

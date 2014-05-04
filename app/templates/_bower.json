@@ -5,7 +5,14 @@
     "bootstrap-sass-official": "~3.1.0",<% } else { %>
     "bootstrap": "~3.0.3",<% }} if (includeModernizr) { %>
     "modernizr": "~2.6.2",<% } %>
-    "jquery": "~1.11.0"
+    "jquery": "~1.11.0",
+    "angular":"latest",
+    "bootstrap":"latest",
+    "jquery":"latest",
+    "mousetrap":"latest",
+    "showdown":"latest",
+    "requirejs":"latest",
+    "underscore":"latest"
   },
   "devDependencies": {}
 }
