@@ -1,0 +1,30 @@
+<page>
+	<h2>A Page</h2>
+<md>
+This is a new page.
+</md>
+
+
+<% if (includePicture) { %>
+  <img src='img/intro.jpg'>
+<% } %>
+
+
+<% if (includeEvent) { %>
+	And then something happened!
+	<event something-that-happened></event>
+<% } %>
+
+
+
+<% if (includeCondition) { %>
+  Something that only appears conditionally
+	<condition something-that-happened>A conditonal statement.</condition>
+<% } %>
+
+
+<% if (includeChoice) { %>
+  What to do next?
+	<choice destination-goes-here>A choice</choice>
+<% } %>
+</page>
