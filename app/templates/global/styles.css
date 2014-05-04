@@ -28,6 +28,13 @@ page {
 	display:block;
 }
 
+page img {
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 
 body {
 /*	padding-top: 70px;*/

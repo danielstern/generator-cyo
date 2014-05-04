@@ -46,7 +46,7 @@ define(['app'], function (app) {
           url: 'story/' + page + '.html',
         })
         .error(function (data, status) {
-          elem.find('button').addClass('btn-disabled');
+          elem.find('button').addClass('btn-disabled disabled');
         });
       },
     }
