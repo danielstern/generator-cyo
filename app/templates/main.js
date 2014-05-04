@@ -44,9 +44,9 @@ require.config({
 });
 
 require([
-	"../bower_components/jquery/jquery",
+	"jquery",
 	"app",
-	"../bower_components/angular/angular",
+	"angular",
 	"d3",
 	"bootstrap",
 	"showdown",

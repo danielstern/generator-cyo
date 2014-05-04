@@ -121,6 +121,7 @@ AppGenerator.prototype.h5bp = function h5bp() {
   this.directory('global','app/global');
   this.directory('js','app/js');
   this.directory('story','app/story');
+  this.directory('lib','app/lib');
   this.directory('storytelling','app/storytelling');
 
   this.copy('main.js','app/main.js');
