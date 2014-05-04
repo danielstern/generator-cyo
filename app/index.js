@@ -51,8 +51,15 @@ AppGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     name: 'storyName',
     message: 'What shall your tale be called?',
+    value: 'storyName',
     default: "My Tale"
-  },{
+  },
+    {
+    name: 'authorName',
+    message: 'What is your name?',
+    default: "My Name",
+  },
+  {
     type: 'confirm',
     name: 'includePictures',
     message: 'Shall your tale include pictures?',
@@ -71,6 +78,8 @@ AppGenerator.prototype.askFor = function askFor() {
       return features.indexOf(feat) !== -1;
     }
 
+    console.log("Answers?",answers);
+
     this.includeSass = false;
     this.includeBootstrap = true;
     this.includeModernizr = true;
@@ -78,6 +87,8 @@ AppGenerator.prototype.askFor = function askFor() {
     this.color = answers.color;
     this.storyName = answers.storyName;
     this.includePictures = answers.includePictures;
+
+    this.authorName = answers.authorName;
 
     this.includeLibSass = answers.libsass;
     this.includeRubySass = !answers.libsass;
@@ -192,11 +203,15 @@ AppGenerator.prototype.install = function () {
   if (this.options['skip-install']) {
     return;
   }
+  var yo = this;
 
   var done = this.async();
   this.installDependencies({
     skipMessage: this.options['skip-install-message'],
     skipInstall: this.options['skip-install'],
-    callback: done
+    callback: function(){
+      yo.spawnCommand('grunt',['server']);
+      done();
+    }
   });
 };

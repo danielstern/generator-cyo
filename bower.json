@@ -1,0 +1,17 @@
+{
+  "name": "generator-cyo",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "modernizr": "~2.6.2",
+    "jquery": "~1.11.0",
+    "angular":"latest",
+    "bootstrap":"latest",
+    "jquery":"latest",
+    "mousetrap":"latest",
+    "showdown":"latest",
+    "requirejs":"latest",
+    "underscore":"latest"
+  },
+  "devDependencies": {}
+}
