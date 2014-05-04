@@ -131,9 +131,10 @@ AppGenerator.prototype.h5bp = function h5bp() {
   // I'd like to add a rider to that. - CYO
   this.directory('global','app/global');
   this.directory('js','app/js');
-  this.directory('story','app/story');
   this.directory('lib','app/lib');
   this.directory('storytelling','app/storytelling');
+  
+  this.template('story/intro.html','app/story/intro.html');
 
   this.copy('main.js','app/main.js');
   this.copy('app.js','app/app.js');
@@ -186,6 +187,7 @@ AppGenerator.prototype.app = function app() {
   this.mkdir('app/scripts');
   this.mkdir('app/styles');
   this.mkdir('app/images');
+  this.mkdir('app/story');
   this.write('app/index.html', this.indexFile);
 
   if (this.coffee) {
