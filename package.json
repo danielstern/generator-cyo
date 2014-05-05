@@ -1,10 +1,10 @@
 {
-  "name": "generator-webapp",
+  "name": "generator-cyo",
   "version": "0.4.9",
   "description": "Scaffold out a front-end web app",
   "license": "BSD",
-  "repository": "yeoman/generator-webapp",
-  "author": "The Yeoman Team",
+  "repository": "danielstern/generator-cyo",
+  "author": "Damoe; Sterm",
   "main": "app/index.js",
   "engines": {
     "node": ">=0.10.0",
@@ -24,7 +24,8 @@
     "h5bp",
     "modernizr",
     "jquery",
-    "grunt"
+    "grunt",
+    "cyo"
   ],
   "dependencies": {
     "yeoman-generator": "~0.16.0",
