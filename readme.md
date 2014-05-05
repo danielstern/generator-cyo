@@ -9,7 +9,7 @@ This simple generator makes it easy to get started with CYO.
 	npm install yeoman
 	npm install generator-cyo
 	yo cyo   
-
+```
 
 ### Subgenerators
 

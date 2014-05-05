@@ -1,6 +1,6 @@
 {
   "name": "generator-cyo",
-  "version": "0.4.9",
+  "version": "0.0.1",
   "description": "Scaffold out a front-end web app",
   "license": "BSD",
   "repository": "danielstern/generator-cyo",
