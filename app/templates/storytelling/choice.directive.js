@@ -14,6 +14,7 @@ define(['app'], function (app) {
       link: function (scope, elem, attrs, ctrls) {
         var page;
         var condition;
+        var elementEnabled = true;
         var story = ctrls [0];
         var chapter = ctrls [1];
 
@@ -35,6 +36,7 @@ define(['app'], function (app) {
 
         elem.bind('click', handleButtonClick);
         function handleButtonClick() {
+          if (!elementEnabled) return;
         	chapter.over();
         	story.nextChapter(page);
         }
@@ -46,7 +48,11 @@ define(['app'], function (app) {
           url: 'story/' + page + '.html',
         })
         .error(function (data, status) {
+          console.log("adding thing");
           elem.find('button').addClass('btn-disabled disabled');
+          elem.find('.btn').attr('disabled',"HI!");
+          elem.attr("disabled",true);
+          elementEnabled = false;
         });
       },
     }
